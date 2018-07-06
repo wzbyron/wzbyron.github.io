@@ -377,67 +377,15 @@
 
       
         
-          
-            <p>最近，正好通过网络了解到可以使用 GitHub Pages 和 Hexo 搭建属于自己的个人博客空间。现在将自己的搭建过程记录使用，毕竟好记性不如烂笔头吗，也算博客的开篇吧。</p>
+          <p>最近，正好通过网络了解到可以使用 GitHub Pages 和 Hexo 搭建属于自己的个人博客空间。现在将自己的搭建过程记录使用，毕竟好记性不如烂笔头吗，也算博客的开篇吧。</p>
 <p>本文搭建使用环境为 CentOS 7。</p>
-<p>&lt; !–more–&gt;</p>
-<h2 id="安装-Node-js-和-git"><a href="#安装-Node-js-和-git" class="headerlink" title="安装 Node.js 和 git"></a>安装 Node.js 和 git</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc g++ make -y</span><br><span class="line">wget https://nodejs.org/dist/v8.11.3/node-v8.11.3.tar.gz</span><br><span class="line">tar -xvf node-v* </span><br><span class="line">cd node-v*</span><br><span class="line">./configure  &amp;&amp; make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line">yum install git -y</span><br></pre></td></tr></table></figure>
-<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>cd 到博客的存放目录，进行初始化并新建了目录 blog ：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-<p>cd 到新建目录 blog，进行安装npm：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/blog/</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>blog 目录如下图：</p>
-<p><img src="/2018/07/06/hexo/2859254-8ac27ff2282797b0.png" alt="2859254-8ac27ff2282797b0"></p>
-<p>启动Hexo服务：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>命令全称为 hexo server 。</p>
-<p>就此在浏览器中打开 <a href="http://0.0.0.0:4000/" target="_blank" rel="noopener">http://localhost:4000</a> ，就能开到 Hexo 测试页面。</p>
-<h2 id="配置-GitHub-Pages"><a href="#配置-GitHub-Pages" class="headerlink" title="配置 GitHub Pages"></a>配置 GitHub Pages</h2><p>为了使本地 git 与 GitHub 建立连接，需进行如下操作：</p>
-<h3 id="创建-SSH-Key-。"><a href="#创建-SSH-Key-。" class="headerlink" title="创建 SSH Key 。"></a>创建 SSH Key 。</h3><p>首先查看用户目录下，有没有 .ssh目录和.ssh目录下有无 id_rsa、id_rsa.pub 两文件。如果有请进行下一步，没有需创建 SSH Key :</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "此处填写备注"</span><br></pre></td></tr></table></figure>
-<p>此时 .ssh 目录下会生成 id_rsa、id_rsa.pub 两文件，其中 id_rsa 为私钥，d_rsa.pub 为公钥。</p>
-<p>注册登陆 GitHub 依次点击：个人头像 -&gt; Settings -&gt; SSH and GPG kyes -&gt; New SSH key,</p>
-<p><img src="/2018/07/06/hexo/1530843574970.png" alt="1530843574970"></p>
-<p><img src="/2018/07/06/hexo/1530843679533.png" alt="1530843679533"></p>
-<p><img src="/2018/07/06/hexo/1530843708259.png" alt="1530843708259"></p>
-<p>Title：填写任意标题</p>
-<p>Key：填写 id_rsa.pub 的内容</p>
-<p>填写完成点击 Add SSH key 保存设置</p>
-<h3 id="建立-GitHub-Pages-仓库"><a href="#建立-GitHub-Pages-仓库" class="headerlink" title="建立 GitHub Pages 仓库"></a>建立 GitHub Pages 仓库</h3><p>新建仓库，点击 New repository</p>
-<p><img src="/2018/07/06/hexo/1530845258174.png" alt="1530845258174"></p>
-<p>填写相关内容</p>
-<p><img src="/2018/07/06/hexo/1530845682117.png" alt="1530845682117"></p>
-<p>对仓库进行设置，进入 Settings ，找到 GitHub Pages 设置界面 </p>
-<p><img src="/2018/07/06/hexo/1530845840617.png" alt="1530845840617"></p>
-<p><img src="/2018/07/06/hexo/1530846103682.png" alt="1530846103682"></p>
-<h3 id="修改-Hexo-配置文件"><a href="#修改-Hexo-配置文件" class="headerlink" title="修改 Hexo 配置文件"></a>修改 Hexo 配置文件</h3><p>在刚建的仓库，找到 git 的提交地址，并复制。</p>
-<p><img src="/2018/07/06/hexo/1530846454775.png" alt="1530846454775"></p>
-<p>终端 cd 到 blog 目录下，修改<strong><em>站点配置文件</em></strong> _config.yml</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure>
-<p>修改如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:wzbyron/wzbyron.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>其中 wzbyron 更换成你自己注册的用户名，且冒号: 后边都需要添加一个空格。</p>
-<p>在 blog 文件夹目录下执行生成静态页面：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<p>全称为 hexo generate </p>
-<p>再执行配置命令，将文章部署到Github：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>全称为 hexo deploy</p>
-<p>命令执行成功后 ，浏览器中打开网址 <a href="https://wzbyron.github.io" target="_blank" rel="noopener">https://username.github.io</a> 即可访问博客。</p>
-<h2 id="安装-theme"><a href="#安装-theme" class="headerlink" title="安装 theme"></a>安装 theme</h2><p>可以到<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo官网主题页</a>去搜寻自己喜欢的theme。这里以hexo-theme-next为例：</p>
-<p>终端cd到 blog 目录下执行如下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>将blog目录下 _config.yml 里 theme 的名称 landscape 修改为 next。</p>
-<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">NexT</a>里有详细的使用文档。</p>
-<h2 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h2><p>终端 cd 到 blog 文件夹下，执行如下命令新建文章：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new "postName"</span><br></pre></td></tr></table></figure>
-<p>postName.md 文件建在目录 /blog/source/_posts 下，postName 是文件名，为方便链接不建议掺杂汉字</p>
-<p>文章编辑完成后，终端cd到blog文件夹下，执行如下命令来发布：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>hexo clean    清除缓存文件 (db.json) 和已生成的静态文件 (public)</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/06/hexo/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

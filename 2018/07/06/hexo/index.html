@@ -83,13 +83,13 @@
 
 
 
-<meta name="description" content="最近，正好通过网络了解到可以使用 GitHub Pages 和 Hexo 搭建属于自己的个人博客空间。现在将自己的搭建过程记录使用，毕竟好记性不如烂笔头吗，也算博客的开篇吧。 本文搭建使用环境为 CentOS 7。 &amp;lt; !–more–&amp;gt; 安装 Node.js 和 git1234567yum install gcc g++ make -ywget https://nodejs.org/d">
+<meta name="description" content="最近，正好通过网络了解到可以使用 GitHub Pages 和 Hexo 搭建属于自己的个人博客空间。现在将自己的搭建过程记录使用，毕竟好记性不如烂笔头吗，也算博客的开篇吧。 本文搭建使用环境为 CentOS 7。">
 <meta name="keywords" content="GitHub Pages,Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo">
 <meta property="og:url" content="http://yoursite.com/2018/07/06/hexo/index.html">
 <meta property="og:site_name" content="叙壹">
-<meta property="og:description" content="最近，正好通过网络了解到可以使用 GitHub Pages 和 Hexo 搭建属于自己的个人博客空间。现在将自己的搭建过程记录使用，毕竟好记性不如烂笔头吗，也算博客的开篇吧。 本文搭建使用环境为 CentOS 7。 &amp;lt; !–more–&amp;gt; 安装 Node.js 和 git1234567yum install gcc g++ make -ywget https://nodejs.org/d">
+<meta property="og:description" content="最近，正好通过网络了解到可以使用 GitHub Pages 和 Hexo 搭建属于自己的个人博客空间。现在将自己的搭建过程记录使用，毕竟好记性不如烂笔头吗，也算博客的开篇吧。 本文搭建使用环境为 CentOS 7。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/07/06/hexo/2859254-8ac27ff2282797b0.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/06/hexo/1530843574970.png">
@@ -100,10 +100,10 @@
 <meta property="og:image" content="http://yoursite.com/2018/07/06/hexo/1530845840617.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/06/hexo/1530846103682.png">
 <meta property="og:image" content="http://yoursite.com/2018/07/06/hexo/1530846454775.png">
-<meta property="og:updated_time" content="2018-07-06T14:56:51.074Z">
+<meta property="og:updated_time" content="2018-07-06T14:58:02.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo">
-<meta name="twitter:description" content="最近，正好通过网络了解到可以使用 GitHub Pages 和 Hexo 搭建属于自己的个人博客空间。现在将自己的搭建过程记录使用，毕竟好记性不如烂笔头吗，也算博客的开篇吧。 本文搭建使用环境为 CentOS 7。 &amp;lt; !–more–&amp;gt; 安装 Node.js 和 git1234567yum install gcc g++ make -ywget https://nodejs.org/d">
+<meta name="twitter:description" content="最近，正好通过网络了解到可以使用 GitHub Pages 和 Hexo 搭建属于自己的个人博客空间。现在将自己的搭建过程记录使用，毕竟好记性不如烂笔头吗，也算博客的开篇吧。 本文搭建使用环境为 CentOS 7。">
 <meta name="twitter:image" content="http://yoursite.com/2018/07/06/hexo/2859254-8ac27ff2282797b0.png">
 
 
@@ -390,7 +390,7 @@
       
         <p>最近，正好通过网络了解到可以使用 GitHub Pages 和 Hexo 搭建属于自己的个人博客空间。现在将自己的搭建过程记录使用，毕竟好记性不如烂笔头吗，也算博客的开篇吧。</p>
 <p>本文搭建使用环境为 CentOS 7。</p>
-<p>&lt; !–more–&gt;</p>
+<a id="more"></a>
 <h2 id="安装-Node-js-和-git"><a href="#安装-Node-js-和-git" class="headerlink" title="安装 Node.js 和 git"></a>安装 Node.js 和 git</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc g++ make -y</span><br><span class="line">wget https://nodejs.org/dist/v8.11.3/node-v8.11.3.tar.gz</span><br><span class="line">tar -xvf node-v* </span><br><span class="line">cd node-v*</span><br><span class="line">./configure  &amp;&amp; make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line">yum install git -y</span><br></pre></td></tr></table></figure>
 <h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>cd 到博客的存放目录，进行初始化并新建了目录 blog ：</p>
